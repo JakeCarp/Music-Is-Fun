@@ -12,7 +12,7 @@ function drawSongs(results) {
   for (let i = 0; i < results.length; i++) {
     let songString = JSON.stringify(results[i])
     template += `
-    <li class="song" onclick="app.controllers.itunesCtrl.makeTarget(${i})"> ${results[i].title} - ${results[i].artist} </li>
+    <li class="song d-inline-block" onclick="app.controllers.itunesCtrl.makeTarget(${i})"> ${results[i].title} - ${results[i].collection} </li>
      `
   }
   songListElem.innerHTML = template
@@ -38,7 +38,7 @@ class ItunesController {
   makeTarget(index) {
     let song = itunesService.getTargetSong(index)
     document.getElementById('target-song').innerHTML = `
-  <div class="card"> 
+  <div class="target-card card bg-dark"> 
   <img class="card-img-top" src="${song.albumArt}">
   <div class="card-body">
   <h5 class="card-title">${song.title} - ${song.artist}</h5>
@@ -48,6 +48,7 @@ class ItunesController {
   </div>
   </div>
   `
+    document.body.scrollTop = document.documentElement.scrollTop = 0
   }
 
 }
