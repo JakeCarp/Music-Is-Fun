@@ -7,10 +7,18 @@ const itunesService = new ItunesService()
 function drawSongs(results) {
   console.log(results)
   //YOUR CODING STARTS HERE
-
-
+  let template = ''
+  let songListElem = document.getElementById('song-list')
+  for (let i = 0; i < results.length; i++) {
+    let songString = JSON.stringify(results[i])
+    template += `
+    <li class="song" onclick="app.controllers.itunesCtrl.makeTarget(${i})"> ${results[i].title} - ${results[i].artist} </li>
+     `
+  }
+  songListElem.innerHTML = template
 
 }
+
 
 
 //PUBLIC
@@ -27,7 +35,20 @@ class ItunesController {
       $('#get-music-button').text('GET MUSIC');
     })
   }
-
+  makeTarget(index) {
+    let song = itunesService.getTargetSong(index)
+    document.getElementById('target-song').innerHTML = `
+  <div class="card"> 
+  <img class="card-img-top" src="${song.albumArt}">
+  <div class="card-body">
+  <h5 class="card-title">${song.title} - ${song.artist}</h5>
+  <p class="card-text">${song.collection} - ${song.price}</p>
+  <audio controls>
+  <source src="${song.preview}" type="audio/mp3">
+  </div>
+  </div>
+  `
+  }
 
 }
 

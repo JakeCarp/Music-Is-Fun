@@ -7,22 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Music Is Fun!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
-    <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-            <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
-            <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
-        </div>
-    </form>
-    <div id="songs">
+    <div class="main-bg">
+
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="main-title">Let's Rock
+                    </h1>
+                </div>
+            </div>
+        </header>
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
+                        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
+                            <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12">
+
+                <div id="songs">
+                    <div id="target-song">
+
+
+                    </div>
+                    <ul id="song-list d-flex">
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </main>
+        <footer class="container-fluid">
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </footer>
     <script type="module" src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>
