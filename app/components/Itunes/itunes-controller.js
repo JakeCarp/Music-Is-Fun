@@ -50,7 +50,9 @@ class ItunesController {
   `
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }
-
+  clearTarget() {
+    document.getElementById('target-song').innerHTML = ``
+  }
 }
 
 
