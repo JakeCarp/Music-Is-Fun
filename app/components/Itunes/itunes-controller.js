@@ -12,7 +12,8 @@ function drawSongs(results) {
   for (let i = 0; i < results.length; i++) {
     let songString = JSON.stringify(results[i])
     template += `
-    <li class="song d-inline-block" onclick="app.controllers.itunesCtrl.makeTarget(${i})"> ${results[i].title} - ${results[i].collection} </li>
+    <li class="song d-inline-block" onclick="app.controllers.itunesCtrl.makeTarget(${i})"> ${results[i].title} - ${results[i].collection}
+    <i class="fa fa-play-circle"></i> </li>
      `
   }
   songListElem.innerHTML = template
